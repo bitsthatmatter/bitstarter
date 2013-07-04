@@ -5,11 +5,10 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   fs.readFile('./index.html', function (err, data) {
-     if (err) 
-	response.send('Could not find or open file index.html for reading\n');
+     if (err) response.send('Could not find or open file index.html for reading\n');
      else {
-	var buffer = new Buffer(data, 'utf-8');
-	response.send(buffer.toString('utf-8');
+		var buffer = new Buffer(data, 'utf-8');
+		response.send(buffer.toString('utf-8'));
      }
   });
 });
